@@ -2,6 +2,11 @@
   import svelteLogo from './assets/svelte.svg'
   import viteLogo from '/vite.svg'
   import Counter from './lib/Counter.svelte'
+  import MultiSelect from 'svelte-multiselect'
+
+  const ui_libs = [`Svelte`, `React`, `Vue`, `Angular`, `...`]
+
+  let selected = []
 </script>
 
 <main>
@@ -17,6 +22,14 @@
 
   <div class="card">
     <Counter />
+  </div>
+
+  <div>
+    Favorite Frontend Tools?
+
+    <code>selected = {JSON.stringify(selected)}</code>
+
+    <MultiSelect bind:selected options={ui_libs} />
   </div>
 
   <p>
